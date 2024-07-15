@@ -10,6 +10,17 @@ app.use(bodyParser.json());   // Parse JSON bodies of incoming requests
 app.use(express.static('public')); // Serve static files from 'public' directory
 
 
+
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
+
+
 // Constants for API integration
 const API_KEY = 'fca_live_MXik8dH6uun2VfClx6vu54cZtJ3qfsTGmvYxueRn';
 const BASE_URL = 'https://api.freecurrencyapi.com/v1/';
