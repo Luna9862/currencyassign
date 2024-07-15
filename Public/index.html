@@ -8,22 +8,22 @@
 </head>
 <body>
   <div class="container">
-    <h1>Currency Converter</h1>
+    <h1>Currency Converter</h1>   <!-- Heading for the currency converter -->
     <div class="converter">
-      <select id="baseCurrency"></select>
-      <input type="number" id="amount" placeholder="Amount">
-      <select id="targetCurrency"></select>
+      <select id="baseCurrency"></select> <!-- Dropdown for selecting base currency -->
+      <input type="number" id="amount" placeholder="Amount"> <!-- Input field for entering amount to convert -->
+      <select id="targetCurrency"></select> <!-- Dropdown for selecting target currency -->
       <button id="convert">Convert</button>
     </div>
     <div class="result">
       <p id="convertedAmount"></p>
     </div>
     <div class="historical">
-      <button id="historicalRates">Get Historical Rates</button>
+      <button id="historicalRates">Get Historical Rates</button> <!-- Button to fetch historical exchange rates -->
       <p id="historicalRate"></p>
     </div>
     <div class="favorites">
-      <button id="saveFavorite">Save as Favorite</button>
+      <button id="saveFavorite">Save as Favorite</button> <!-- Button to save current currency pair as favorite -->
       <ul id="favoritePairs"></ul>
     </div>
   </div>
