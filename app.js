@@ -49,6 +49,7 @@ app.get('/api/exchange-rate/:base', async (req, res) => {
 });
 
 // Fetch historical exchange rates
+// Fetch historical exchange rates
 app.get('/api/historical-rate/:base/:target/:date', async (req, res) => {
   const { base, target, date } = req.params;
   try {
@@ -59,6 +60,7 @@ app.get('/api/historical-rate/:base/:target/:date', async (req, res) => {
         date
       }
     });
+    console.log(response.data); // Log the response data
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch historical rates' });

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const favoritePairsList = document.getElementById('favoritePairs');
 
   // Populate currency dropdowns
-  const currencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY'];
+  const currencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY','BGN','CZK','DKK','HUF','PLN','RON','SEK','BRL','NOK','THB','MXN','KRW','MYR','ZAR','PHP'];
   currencies.forEach(currency => {
     const option1 = document.createElement('option');
     const option2 = document.createElement('option');
@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const response = await fetch(`/api/historical-rate/${baseCurrency}/${targetCurrency}/${date}`);
       const data = await response.json();
-      historicalRateDisplay.textContent = `Historical exchange rate on ${date}: 1 ${baseCurrency} = ${data.data[targetCurrency]} ${targetCurrency}`;
+      console.log(data); // Log the response to debug
+      const rate = data.data[date][targetCurrency]; // Access the correct rate
+      historicalRateDisplay.textContent = `Historical exchange rate on ${date}: 1 ${baseCurrency} = ${rate} ${targetCurrency}`;
     } catch (error) {
       console.error('Error fetching historical rate:', error);
     }
